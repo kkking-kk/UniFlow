@@ -4,7 +4,7 @@
 
 <p>
   <img alt="Framework" src="https://img.shields.io/badge/Framework-PyTorch-EE4C2C?logo=pytorch&logoColor=white" />
-  <img alt="Task" src="https://img.shields.io/badge/Task-Time--Series%20Generation-2266B0" />
+  <img alt="Task" src="https://img.shields.io/badge/Task-Time Series%20Generation-2266B0" />
   <img alt="Representation" src="https://img.shields.io/badge/Representation-Shared--Index%20Multiscale-7952B3" />
   <img alt="Generator" src="https://img.shields.io/badge/Generator-Categorical%20Flow-159895" />
 </p>
