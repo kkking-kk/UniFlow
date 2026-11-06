@@ -13,7 +13,7 @@
   <img alt="Generator" src="https://img.shields.io/badge/Generator-Categorical%20Flow-159895" />
 </p>
 
-[Overview](#overview) · [Architecture](#architecture) · [Installation](#installation) · [Quick Start](#quick-start) · [Datasets](#datasets) · [Repository Structure](#repository-structure) · [Notes](#reproducibility-notes)
+[Overview](#overview) · [Installation](#installation) · [Quick Start](#quick-start) · [Datasets](#datasets) · [Repository Structure](#repository-structure) 
 
 </div>
 
@@ -28,35 +28,6 @@
 - **Unified decoding:** generated public IDs retrieve the corresponding scale-specific codewords and are decoded back into a time series.
 
 UniFlow builds on the categorical flow/low-rank-anchor direction of [SDFlow: Similarity-Driven Flow Matching for Time Series Generation](https://arxiv.org/abs/2605.05736), extending it with a shared multiscale semantic interface.
-
-## Architecture
-
-```mermaid
-flowchart TD
-    X[Real multivariate time series] --> E1[Fine-scale encoder]
-    X --> E2[Coarse-scale encoder]
-    E1 --> V[Weighted shared-index voting]
-    E2 --> V
-    V --> Y[One public-ID sequence]
-    Y --> C[Scale-specific codebook lookup]
-    C --> D[Frozen shared decoder]
-    D --> R[Stage-1 reconstruction]
-
-    Y --> Z[Public codebook embeddings]
-    P[Learned low-rank anchor prior] --> F[DiT categorical flow matching]
-    Z -. Stage-2 training targets .-> F
-    F --> G[Generated public IDs]
-    G --> C2[Scale-specific codeword retrieval]
-    C2 --> D2[Frozen Stage-1 decoder]
-    D2 --> O[Synthetic multivariate time series]
-
-    classDef representation fill:#eaf1ff,stroke:#356bd6,color:#163666
-    classDef generation fill:#e6faf6,stroke:#149b85,color:#125a50
-    class V,Y,C,D representation
-    class P,F,G,C2,D2 generation
-```
-
-> **Core idea:** preserve multiscale information in the *representation*, while keeping the *generator-facing sequence length* fixed.
 
 ## Installation
 
@@ -178,21 +149,6 @@ UniFlow/
 
 The Stage-2 trainer computes DS, PS, and C-FID during periodic evaluations. The specific implementations are in `metrics/`; evaluation protocol, data split, preprocessing, and sample count should be held fixed for comparisons.
 
-## Reproducibility Notes
-
-- **Legacy names preserved for compatibility.** The public Stage-2 entry point is `train_uniflow.py`, but historical `train_sdflow.py`, `models.sdflow`, `utils.eval_sdflow`, and `--sdflow_ckpt` continue to work as aliases. Existing checkpoint tensor keys are not renamed.
-- **Data splits.** The current CSV loader allocates **100% of rows to training** and creates empty validation/test partitions (`dataset/dataset_VQ.py`). This follows the supplied code, but is **not** a ready-made held-out evaluation split; adjust it for external evaluations where necessary.
-- **Preprocessing.** CSV datasets are min–max normalized using statistics calculated on the loaded data; take care to prevent leakage if introducing new train/test splits.
-- **Checkpoints and datasets.** No pretrained checkpoints or dataset files are distributed in this archive.
-- **Runtime validation.** The repository has passed Python source compilation checks after the naming migration, but full training and metric reproduction require the appropriate environment and datasets.
-
-## Citation
-
-A UniFlow BibTeX entry can be added when its manuscript metadata is finalized. UniFlow builds on [SDFlow](https://arxiv.org/abs/2605.05736), which should be acknowledged where relevant.
-
-## License
-
-No license file was included in the supplied project archive. Please add the license you intend to use before announcing reuse permissions for this GitHub repository.
 
 ---
 
