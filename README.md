@@ -146,6 +146,9 @@ UniFlow/
 The Stage-2 trainer computes DS, PS, and C-FID during periodic evaluations. The specific implementations are in `metrics/`; evaluation protocol, data split, preprocessing, and sample count should be held fixed for comparisons.
 
 
+## Acknowledgement
+This repo is built upon (Li's Repo) [https://github.com/William-Liwei/SDFlow], and we show sincerely thanks for Li Wei's contributions.
+
 ## Citing
 
 If our work has inspired your research, you can  consider citing us:
