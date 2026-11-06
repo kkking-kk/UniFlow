@@ -149,3 +149,33 @@ The Stage-2 trainer computes DS, PS, and C-FID during periodic evaluations. The 
 ---
 
 <div align="center"><sub>UniFlow · Shared semantics across temporal scales, one unified generative interface.</sub></div>
+
+
+## Citing
+
+If our work has inspired your research, you can  consider citing us:
+```BibTeX
+
+@article{chen2024sdformer,
+  title={Sdformer: Similarity-driven discrete transformer for time series generation},
+  author={Chen, Zhicheng and Feng, Shibo and Zhang, Zhong and Xiao, Xi and Gao, Xingyu and Zhao, Peilin},
+  journal={Advances in Neural Information Processing Systems},
+  volume={37},
+  pages={132179--132207},
+  year={2024}
+}
+
+@article{feng2026msdformer,
+  title={MSDformer: Multi-scale Discrete Transformer For Time Series Generation},
+  author={Feng, Shibo and Chen, Zhicheng and Xiao, Xi and Zhang, Zhong and Li, Qing and Gao, Xingyu and Zhao, Peilin},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2026},
+  publisher={IEEE}
+}
+
+@article{li2026sdflow,
+  title={SDFlow: Similarity-Driven Flow Matching for Time Series Generation},
+  author={Li, Wei and Feng, Shibo and Wu, Pengcheng and Gao, Xingyu and Wu, Min and Zhao, Peilin},
+  journal={NeurIPS},
+  year={2026}
+}
