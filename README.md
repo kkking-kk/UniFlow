@@ -1,6 +1,6 @@
 <div align="center">
 
-# UniFlow: Unified Multiscale Time-Series Generation via Categorical Flow Matching
+# UniFlow: Unified Multi-Scale Flow Matching for Time Series Generation
 
 <p>
   <img alt="Framework" src="https://img.shields.io/badge/Framework-PyTorch-EE4C2C?logo=pytorch&logoColor=white" />
