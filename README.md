@@ -146,11 +146,6 @@ UniFlow/
 The Stage-2 trainer computes DS, PS, and C-FID during periodic evaluations. The specific implementations are in `metrics/`; evaluation protocol, data split, preprocessing, and sample count should be held fixed for comparisons.
 
 
----
-
-<div align="center"><sub>UniFlow · Shared semantics across temporal scales, one unified generative interface.</sub></div>
-
-
 ## Citing
 
 If our work has inspired your research, you can  consider citing us:
