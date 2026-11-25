@@ -177,3 +177,11 @@ If our work has inspired your research, you can  consider citing us:
   journal={NeurIPS},
   year={2026}
 }
+
+@article{feng2026uniflow,
+  title={UniFlow: Unified Multi-Scale Flow Matching for Time Series Generation},
+  author={Feng, Shibo and Li, Wei and Wu, Min and Miao, Chunyan and Zhao, Peilin},
+  journal={arXiv preprint arXiv:2611.04825},
+  year={2026}
+}
+
